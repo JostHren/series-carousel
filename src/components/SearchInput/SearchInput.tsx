@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { debounce } from "lodash-es";
 import { useSearchParams } from "react-router";
 import { useDispatch } from "react-redux";
@@ -12,6 +12,10 @@ export const SearchInput = (): JSX.Element => {
   const searchValue = searchParams.get("search") || "";
   const [internalValue, setInternalValue] = useState(searchValue);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(updateSeriesQueryName(searchValue));
+  }, [dispatch, searchValue]);
 
   const handleInputChange = useMemo(
     () =>
@@ -33,12 +37,31 @@ export const SearchInput = (): JSX.Element => {
   };
 
   return (
-    <input
-      className="mt-10 p-1 border-2"
-      type="text"
-      value={internalValue}
-      onChange={onChange}
-      placeholder={SEARCH_INPUT_PLACEHOLDER}
-    />
+    <div className="w-full max-w-2xl relative">
+      <input
+        className="h-full pl-2 min-h-9 w-full max-w-2xl border-3 rounded focus:outline-none focus:ring focus:ring-yellow-400"
+        type="text"
+        value={internalValue}
+        onChange={onChange}
+        placeholder={SEARCH_INPUT_PLACEHOLDER}
+      />
+      <div className="absolute inset-y-1 end-2 flex items-center pointer-events-none">
+        <svg
+          className="w-4 h-4 text-gray-500 dark:text-gray-400"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 20 20"
+        >
+          <path
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+          />
+        </svg>
+      </div>
+    </div>
   );
 };
