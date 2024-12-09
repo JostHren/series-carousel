@@ -1,2 +1,2 @@
 export * from "./useCarouselNavigation";
-export type { useCarouselNavigationProps } from "./useCarouselNavigation";
+export * from "./useWindowSize";
