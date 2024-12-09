@@ -1,0 +1,1 @@
+export { CarouselArea } from "./CarouselArea";
