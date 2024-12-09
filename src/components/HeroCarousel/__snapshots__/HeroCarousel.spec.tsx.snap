@@ -1,0 +1,74 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`HeroCarousel component > HeroCarousel component to render 1`] = `
+<div>
+  <div
+    class="basis-full sm:basis-4/6 relative bg-black overflow-hidden max-h-[calc(61dvh-6rem)] sm:max-h-[calc(100dvh-4rem)]"
+  >
+    <button
+      class="absolute bg-slate-800 bg-opacity-0 hover:bg-opacity-30 top-0 bottom-0 left-0 z-10 w-20"
+    >
+      <svg
+        class="m-auto"
+        fill="#F6E05E"
+        viewBox="0 0 24 24"
+        width="50%"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M15.71 20.71a1 1 0 0 0 0-1.41l-7.29-7.29 7.29-7.29a.996 .996 0 1 0-1.41-1.41l-8.01 7.98c-.2.2-.29.45-.29.71s.1.51.29.71l8 8c.39.39 1.02.39 1.41 0Z"
+        />
+      </svg>
+    </button>
+    <button
+      class="absolute bg-slate-800 bg-opacity-0 hover:bg-opacity-30 top-0 bottom-0 right-0 w-20 z-10"
+    >
+      <svg
+        class="m-auto"
+        fill="#F6E05E"
+        viewBox="0 0 24 24"
+        width="50%"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8.29 3.29a1 1 0 0 0 0 1.41l7.29 7.29-7.29 7.29a.996.996 0 1 0 1.41 1.41l8-8c.2-.2.29-.45.29-.71s-.1-.51-.29-.71L9.71 3.29a1 1 0 0 0-1.41 0Z"
+        />
+      </svg>
+    </button>
+    <div
+      class="flex min-w-full transition-transform duration-500"
+      style="transform: translateX(-0%);"
+    >
+      <div
+        class="min-w-full relative"
+      >
+        <div
+          class="min-w-full relative"
+        >
+          <div
+            class="absolute bottom-0 m-2 text-yellow-400"
+          >
+            <div
+              class="bg-black text-lg font-extrabold mb-2 p-1 z-30 "
+            >
+              Try something else
+            </div>
+            <div
+              class="bg-black w-min truncate mb-1 p-1 z-30 "
+            />
+            <div
+              class="bg-black w-min truncate p-1 z-30"
+            >
+               
+            </div>
+          </div>
+          <div
+            class="m-auto h-[calc(61dvh-6rem)] sm:h-[calc(100dvh-4rem)]"
+            style="background-image: url(./not_popular.png); background-position: center; background-size: contain; background-repeat: no-repeat;"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

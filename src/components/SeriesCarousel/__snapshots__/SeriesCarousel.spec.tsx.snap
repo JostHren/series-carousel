@@ -1,0 +1,71 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`SeriesCarousel component > SeriesCarousel component to render 1`] = `
+<div>
+  <div
+    class="rounded-lg sm:basis-2/6 m-2 overflow-hidden relative h-[calc(47dvh-6rem)] sm:h-[calc(99dvh-4rem)]"
+  >
+    <button
+      class="absolute bg-slate-800 bg-opacity-0 hover:bg-opacity-30 top-0 left-0 right-0 z-10 h-10"
+    >
+      <svg
+        class="ml-2"
+        fill="#F6E05E"
+        height="50%"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M3.29 15.71c.39.39 1.02.39 1.41 0l7.29-7.29 7.29 7.29a.996 .996 0 1 0 1.41-1.41l-7.98-8.01c-.2-.2-.45-.29-.71-.29s-.51.1-.71.29l-8 8a1 1 0 0 0 0 1.41Z"
+        />
+      </svg>
+    </button>
+    <button
+      class="absolute bg-slate-800 bg-opacity-0 hover:bg-opacity-30 bottom-0 left-0 right-0 h-10 z-10"
+    >
+      <svg
+        class="ml-2"
+        fill="#F6E05E"
+        height="50%"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M20.71 8.29a1 1 0 0 0-1.41 0l-7.29 7.29-7.29-7.29A.996 .996 0 1 0 3.31 9.7l8 8c.2.2.45.29.71.29s.51-.1.71-.29l8-8a1 1 0 0 0 0-1.41Z"
+        />
+      </svg>
+    </button>
+    <div
+      class="flex flex-col transition-transform duration-500 p-1 pt-0"
+      style="transform: translateY(-0%);"
+    >
+      <div
+        class="
+        h-[calc((47dvh-6.5rem)/1)] sm:h-[calc((99dvh-5rem)/2)] flex mb-1 p-2 pl-6 flex-row w-full bg-slate-700 rounded-lg"
+      >
+        <div
+          class="basis-1/4 sm:basis-1/3 flex-grow-0 flex-shrink-0"
+        >
+          <img
+            alt="Try something else"
+            class="max-h-full aspect-auto m-auto"
+            height="100%"
+            src="./not_popular.png"
+          />
+        </div>
+        <div
+          class="basis-3/4 sm:basis-2/3 flex-grow-0 flex-shrink-0 pl-4 text-yellow-400 truncate"
+        >
+          <div
+            class="text-lg font-extrabold truncate"
+          >
+            Try something else
+          </div>
+          <div />
+          <div />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
