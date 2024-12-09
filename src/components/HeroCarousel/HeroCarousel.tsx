@@ -61,10 +61,7 @@ const HeroCarouselNavigation = ({
 
 const HeroCarouselSlide = ({ slide }: CarouselSlideProps): JSX.Element => {
   return (
-    <div
-      className="min-w-full h-[50vh] sm:h-[90vh] relative"
-      key={slide.show?.id}
-    >
+    <div className="min-w-full relative" key={slide.show?.id}>
       <div className="min-w-full relative">
         <div className="absolute bottom-0 m-2 text-yellow-400">
           <div className="bg-black text-lg font-extrabold mb-2 p-1 z-30 ">
@@ -80,7 +77,7 @@ const HeroCarouselSlide = ({ slide }: CarouselSlideProps): JSX.Element => {
           </div>
         </div>
         <div
-          className="m-auto h-[50vh] sm:h-[90vh]"
+          className="m-auto h-[calc(61dvh-6rem)] sm:h-[calc(100dvh-4rem)]"
           style={{
             backgroundImage: `url(${
               slide.show?.image?.original ?? "./not_found.png"
@@ -108,9 +105,13 @@ export const HeroCarousel = ({
     });
 
   return (
-    <div className="sm:m-auto basis-full sm:basis-4/6 relative bg-black overflow-hidden">
-      {!isErrorSlide && <HeroCarouselLabel />}
-      <HeroCarouselNavigation prevSlide={prevSlide} nextSlide={nextSlide} />
+    <div className="basis-full sm:basis-4/6 relative bg-black overflow-hidden max-h-[calc(61dvh-6rem)] sm:max-h-[calc(100dvh-4rem)]">
+      {!isErrorSlide && (
+        <>
+          <HeroCarouselLabel />
+          <HeroCarouselNavigation prevSlide={prevSlide} nextSlide={nextSlide} />
+        </>
+      )}
       <div
         className="flex min-w-full transition-transform duration-500"
         style={{

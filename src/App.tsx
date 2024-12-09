@@ -2,7 +2,7 @@ import { CarouselArea, SearchArea } from "./components";
 
 function App() {
   return (
-    <div className="h-full bg-black min-h-96">
+    <div className="h-dvh w-screen bg-black">
       <SearchArea />
       <CarouselArea />
     </div>

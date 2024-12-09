@@ -1,5 +1,10 @@
-import { useCarouselNavigation, useCarouselNavigationProps } from "../../hooks";
+import {
+  useCarouselNavigation,
+  useCarouselNavigationProps,
+  useWindowSize,
+} from "../../hooks";
 import { CarouselProps, CarouselSlideProps } from "../HeroCarousel";
+import classNames from "classnames";
 
 const SeriesCarouselLabel = (): JSX.Element => {
   return (
@@ -50,13 +55,24 @@ const SeriesCarouselNavigation = ({
 };
 
 const SeriesCarouselSlide = ({ slide }: CarouselSlideProps): JSX.Element => {
+  const { height } = useWindowSize();
+
   return (
-    <div className="flex mb-1 p-2 flex-row h-[18vh] sm:h-[22vh] w-full bg-slate-700 rounded-lg">
+    <div
+      className={classNames(
+        "flex mb-1 p-2 pl-6 flex-row w-full bg-slate-700 rounded-lg h-[calc((47dvh-6.5rem)/2)]",
+        {
+          "sm:h-[calc((99dvh-4.5rem)/2)]": height < 450,
+          "sm:h-[calc((99dvh-5rem)/4)]": height >= 450,
+        }
+      )}
+    >
       <div className="basis-1/4 sm:basis-1/3 flex-grow-0 flex-shrink-0">
         <img
           src={slide.show?.image?.original ?? "./not_found.png"}
           alt={slide.show?.name}
-          className="h-full m-auto"
+          height={"100%"}
+          className="max-h-full aspect-auto m-auto"
         />
       </div>
       <div className="basis-3/4 sm:basis-2/3 flex-grow-0 flex-shrink-0 pl-4 text-yellow-400 truncate">
@@ -87,11 +103,18 @@ export const SeriesCarousel = ({
     });
 
   return (
-    <div className="rounded-lg m-2 overflow-hidden relative h-[37vh] sm:h-[90vh]">
-      {!isErrorSlide && <SeriesCarouselLabel />}
-      <SeriesCarouselNavigation prevSlide={prevSlide} nextSlide={nextSlide} />
+    <div className="rounded-lg sm:basis-2/6 m-2 overflow-hidden relative h-[calc(47dvh-6rem)] sm:h-[calc(99dvh-4rem)]">
+      {!isErrorSlide && (
+        <>
+          <SeriesCarouselLabel />
+          <SeriesCarouselNavigation
+            prevSlide={prevSlide}
+            nextSlide={nextSlide}
+          />
+        </>
+      )}
       <div
-        className="flex flex-col transition-transform duration-500 p-1"
+        className="flex flex-col transition-transform duration-500 p-1 pt-0"
         style={{
           transform: `translateY(-${currentIndex * 14.25}%)`,
         }}

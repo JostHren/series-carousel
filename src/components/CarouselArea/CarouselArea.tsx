@@ -42,7 +42,7 @@ export const CarouselArea = (): JSX.Element => {
   if (!data || data.length === 0) return <HeroCarousel data={NO_RESULTS} />;
 
   return (
-    <div className="flex flex-col sm:flex-row justify-between min-w-fit">
+    <div className="flex flex-col sm:flex-row h-full">
       <HeroCarousel data={threeRandomSeries} />
       <SeriesCarousel
         data={
