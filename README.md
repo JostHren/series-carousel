@@ -1,50 +1,54 @@
-# React + TypeScript + Vite
+# Series carousel sample app
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This app was created with `Vite` build tool using `react-ts` template.
 
-Currently, two official plugins are available:
+Main dependencies:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React
+- React-router | Routing
+- Redux | State management
+- Reduxjs/Toolkit | Toolset for Redux, Async operations (RTK Query)
+- Tailwind | Utility first CSS framework
 
-## Expanding the ESLint configuration
+Other dependencies:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Classnames | Utility for conditionally joining classNames
+- Lodash-es | Modularized version of utility library Lodash
 
-- Configure the top-level `parserOptions` property like this:
+## Run App using Docker
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+Clone repo & run:
+
+```
+$ make setup
+$ make serve
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Run and test App
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+First clone repo & and run (Node v20.10):
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```
+$ npm run install
+```
+
+Then - to run:
+
+-- app in `preview` mode:
+
+```
+$ npm run dev
+```
+
+-- app in `production` mode:
+
+```
+$ npm run build
+$ npm run preview
+```
+
+-- unit tests:
+
+```
+$ npm run test:unit
 ```
